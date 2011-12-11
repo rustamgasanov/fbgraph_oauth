@@ -1,0 +1,21 @@
+<p style="font-weight:bold;font-size:18px">Currently logged in user:</p>
+<p>First name:   <span style="color:red"><%= @fb_user.first_name %></span></p>
+<p>Last name:    <span style="color:red"><%= @fb_user.last_name  %></span></p>
+<p>Email:        <span style="color:red"><%= @fb_user.email      %></span></p>
+<p>User id:      <span style="color:red"><%= @fb_user.id         %></span></p>
+<p>Access token: <span style="color:red"><%= @fb_user[:access_token]       %></span></p>
+<br />
+<p style="font-weight:bold;font-size:18px">Friends:</p>
+<% @fb_user_friends.data.data.each do |friend| %>
+  <p style="color:blue"><%= friend.name %></p>
+<% end %>
+
+<%= link_to 'start', :controller => "fb_oauth", :action => "start" %><br />
+<%= link_to 'info',  :controller => "fb_oauth", :action => "info" %><br />
+<%= link_to 'logout',:controller => "fb_oauth", :action => "logout" %>
+
+
+
+<%= debug(@fb_user) %>
+<hr>
+<%= debug(@fb_user_friends) %>

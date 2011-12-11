@@ -1,0 +1,7 @@
+Success! Logged in user:
+<span style="color:red"><%= @fb_user.first_name + " " + @fb_user.last_name  %></span>
+<br />
+
+<%= link_to 'start', :controller => "fb_oauth", :action => "start" %><br />
+<%= link_to 'info',  :controller => "fb_oauth", :action => "info" %><br />
+<%= link_to 'logout',:controller => "fb_oauth", :action => "logout" %>
